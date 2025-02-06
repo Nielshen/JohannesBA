@@ -69,6 +69,15 @@ Supervisor_Support           3.95             0.75
 Work_Flexibility             3.66             0.87
 Work_Method_Autonomy         3.92             0.77
 
+Cronbachs Alpha für alle Skalen:
+Digital_Fluency: 0.891
+Individual_Creativity: 0.905
+Job_Complexity: 0.909
+Psychological_Safety: 0.636
+Supervisor_Support: 0.833
+Work_Flexibility: 0.852
+Work_Method_Autonomy: 0.886
+
 Korrelationsmatrix mit Signifikanzniveaus:
 Anmerkung: *p < 0.05; **p < 0.01
                       Digital_Fluency Individual_Creativity Job_Complexity Psychological_Safety Supervisor_Support Work_Flexibility Work_Method_Autonomy  Alter Geschlecht

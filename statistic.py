@@ -1,9 +1,12 @@
 import pandas as pd
 import numpy as np
 from scipy import stats
+from scipy.stats import spearmanr
+from sklearn.preprocessing import StandardScaler
 import seaborn as sns
 import matplotlib.pyplot as plt
 import statsmodels.api as sm
+
 
 # Daten einlesen
 df = pd.read_csv('johannes.csv', skiprows=[1])
@@ -125,6 +128,35 @@ def format_with_stars(corr, p):
         return f"{corr}*"
     return f"{corr}"
 
+def cronbach_alpha(df, items):
+    """
+    Berechnet Cronbachs Alpha für eine Gruppe von Items
+    """
+    # Anzahl der Items
+    k = len(items)
+    
+    # Wenn nur ein Item vorhanden ist, kann kein Alpha berechnet werden
+    if k < 2:
+        return None
+    
+    # Varianz der Summenscores
+    total_var = df[items].sum(axis=1).var()
+    
+    # Summe der Varianzen der einzelnen Items
+    item_vars = df[items].var().sum()
+    
+    # Cronbachs Alpha Formel
+    alpha = (k / (k-1)) * (1 - item_vars / total_var)
+    
+    return alpha
+
+# Cronbachs Alpha für jede Variablengruppe berechnen
+print("\nCronbachs Alpha für alle Skalen:")
+for var_group, columns in variables.items():
+    alpha = cronbach_alpha(df_clean, columns)
+    print(f"{var_group}: {alpha:.3f}")
+
+
 # Erstelle formatierte Korrelationsmatrix mit Sternchen
 formatted_corr = pd.DataFrame(index=corr_matrix.index, columns=corr_matrix.columns)
 for i in corr_matrix.index:
@@ -160,8 +192,6 @@ plt.title('Korrelationsmatrix (Heatmap)')
 plt.tight_layout()
 plt.savefig('korrelationsmatrix.png', dpi=300, bbox_inches='tight')
 plt.close()
-
-import statsmodels.api as sm
 
 # Standardisierung der kontinuierlichen Variablen (Z-Standardisierung)
 def standardize(x):
