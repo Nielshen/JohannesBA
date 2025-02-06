@@ -76,13 +76,13 @@
 | Work_Method_Autonomy  | 3.92       | 0.77           |
 
 ### Cronbachs Alpha
-Digital_Fluency: 0.891
-Individual_Creativity: 0.905
-Job_Complexity: 0.909
-Psychological_Safety: 0.636
-Supervisor_Support: 0.833
-Work_Flexibility: 0.852
-Work_Method_Autonomy: 0.886
+- Digital_Fluency: 0.891
+- Individual_Creativity: 0.905
+- Job_Complexity: 0.909
+- Psychological_Safety: 0.636
+- Supervisor_Support: 0.833
+- Work_Flexibility: 0.852
+- Work_Method_Autonomy: 0.886
 
 ## Korrelationsmatrix
 *Anmerkung: \*p < 0.05; \*\*p < 0.01*
